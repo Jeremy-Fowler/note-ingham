@@ -10,7 +10,7 @@ function _drawTopics() {
 }
 
 function _drawTopic() {
-
+  setHTML('topic', appState.topic.DetailsTemplate)
 }
 
 export class TopicsController {

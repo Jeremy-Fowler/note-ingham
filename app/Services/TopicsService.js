@@ -7,12 +7,13 @@ function _save() {
 }
 
 class TopicsService {
+  constructor () {
+    appState.on('topics', _save)
+    appState.on('topic', _save)
+  }
   setActiveTopic(id) {
     const topic = appState.topics.find(t => t.id == id)
     appState.topic = topic
-  }
-  constructor () {
-    appState.on('topics', _save)
   }
 
   createTopic(data) {
