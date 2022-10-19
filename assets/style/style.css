@@ -8,3 +8,7 @@ h1{
   font-family: 'Nabla', cursive;
 }
 
+.topic{
+  min-height: 100vh;
+  border-left: .2vw solid black;
+}
