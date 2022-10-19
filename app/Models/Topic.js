@@ -47,7 +47,7 @@ export class Topic {
             <div class="row">
               <div class="col-md-10">
                 <div class="form-floating">
-                  <input type="text" name="title" class="form-control" id="note-title" required>
+                  <input type="text" name="title" class="form-control" id="note-title" minlength="2" maxlength="15" required>
                   <label for="note-title">Note Title</label>
                 </div>
               </div>
