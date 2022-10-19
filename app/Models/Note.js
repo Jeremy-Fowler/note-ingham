@@ -9,7 +9,17 @@ export class Note {
 
   get NoteTemplate() {
     return `
-    <h3>${this.title}</h3>
+    <h3>
+      <span>
+        ${this.title}
+      </span>
+      <span>
+        <button onclick="app.notesController.removeNote('${this.id}')" type="button" class="btn btn-outline-danger">
+          <i class="mdi mdi-close" title="Delete this note">
+          </i>
+        </button>
+      </span>
+    </h3>
     <div class="mb-3 me-3">
       <textarea onchange="app.notesController.editNote('${this.id}')" class="form-control bg-light" name='notes' id="note-${this.id}" rows="3">${this.body}</textarea>
     </div>

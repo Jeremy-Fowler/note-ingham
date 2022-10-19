@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js"
 import { topicsService } from "../Services/TopicsService.js"
 import { getFormData } from "../Utils/FormHandler.js"
+import { Pop } from "../Utils/Pop.js"
 import { setHTML } from "../Utils/Writer.js"
 
 function _drawTopics() {
@@ -10,7 +11,11 @@ function _drawTopics() {
 }
 
 function _drawTopic() {
-  setHTML('topic', appState.topic.DetailsTemplate)
+  if (appState.topic) {
+    setHTML('topic', appState.topic.DetailsTemplate)
+  } else {
+    setHTML('topic', '')
+  }
 }
 
 export class TopicsController {
@@ -24,9 +29,20 @@ export class TopicsController {
     let form = window.event.target
     let data = getFormData(form)
     topicsService.createTopic(data)
+    // @ts-ignore
+    form.reset()
+    // @ts-ignore
+    const collapse = bootstrap.Collapse.getOrCreateInstance('#topic-collapse')
+    collapse.toggle()
   }
   setActiveTopic(id) {
     topicsService.setActiveTopic(id)
+  }
+
+  async removeTopic(id) {
+    if (await Pop.confirm('Are you sure that you want to delete this topic?')) {
+      topicsService.removeTopic(id)
+    }
   }
 
 }

@@ -11,6 +11,10 @@ class TopicsService {
     appState.on('topics', _save)
     appState.on('topic', _save)
   }
+  removeTopic(id) {
+    appState.topics = appState.topics.filter(t => t.id !== id)
+    appState.topic = null
+  }
   setActiveTopic(id) {
     const topic = appState.topics.find(t => t.id == id)
     appState.topic = topic
