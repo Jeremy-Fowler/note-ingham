@@ -59,13 +59,13 @@ export class Topic {
         </div>
       </div>
       <div>
-      ${this.Notes}
+      ${this.NoteTemplates}
       </div>
     </div>
     `
   }
 
-  get Notes() {
+  get NoteTemplates() {
     let template = ''
     this.notes.forEach(n => template += n.NoteTemplate)
     return template

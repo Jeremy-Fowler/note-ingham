@@ -48,7 +48,8 @@
                     <div class="row">
                       <div class="col-12">
                         <div class="form-floating mb-3">
-                          <input type="text" name="title" class="form-control" id="topic-title" required>
+                          <input type="text" name="title" class="form-control" id="topic-title" minlength="2"
+                            maxlength="15" required>
                           <label for="topic-title">Topic Title</label>
                         </div>
                       </div>
@@ -56,10 +57,10 @@
                         <div class="form-floating">
                           <select class="form-select" name="color" id="topic-color"
                             aria-label="Floating label select example" required>
-                            <option value="success">Green</option>
-                            <option value="primary">Blue</option>
-                            <option value="info">Purple</option>
-                            <option value="warning">Yellow</option>
+                            <option value="success">🍏 Green</option>
+                            <option value="primary">🔵 Blue</option>
+                            <option value="info">🍇 Purple</option>
+                            <option value="warning">🍫 Brown</option>
                           </select>
                           <label for="topic-color">Color</label>
                         </div>
