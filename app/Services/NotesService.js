@@ -7,7 +7,7 @@ class NotesService {
     appState.emit('topic')
   }
   editNote(id, bodyData) {
-    let note = appState.topic.notes.find(n => n.id == id)
+    const note = appState.topic.notes.find(n => n.id == id)
     note.body = bodyData
     appState.emit('topic')
     return note

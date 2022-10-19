@@ -22,7 +22,6 @@ class TopicsService {
 
   createTopic(data) {
     appState.topics = [...appState.topics, new Topic(data)]
-    console.log(appState.topics);
   }
 }
 

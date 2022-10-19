@@ -17,7 +17,7 @@ export class NotesController {
   }
 
   editNote(id) {
-    let bodyData = window.event.target
+    const bodyData = window.event.target
     // @ts-ignore
     const note = notesService.editNote(id, bodyData.value)
     Pop.toast(`${note.title} has been saved`, 'success')
