@@ -5,11 +5,12 @@ export class Note {
     this.id = data.id || generateId()
     this.title = data.title
     this.body = data.body || 'Enter notes here...'
+    this.updatedAt = data.updatedAt ? new Date(data.updatedAt) : new Date()
   }
 
   get NoteTemplate() {
     return `
-    <h3>
+    <h4>
       <span>
         ${this.title}
       </span>
@@ -19,7 +20,12 @@ export class Note {
           </i>
         </button>
       </span>
-    </h3>
+    </h4>
+    <h5>
+      <span>
+        ${this.updatedAt.toLocaleString()}
+      </span>
+    </h5>
     <div class="mb-3 me-3">
       <textarea onchange="app.notesController.editNote('${this.id}')" class="form-control bg-light" name='notes' id="note-${this.id}" rows="3">${this.body}</textarea>
     </div>

@@ -9,6 +9,7 @@ class NotesService {
   editNote(id, bodyData) {
     const note = appState.topic.notes.find(n => n.id == id)
     note.body = bodyData
+    note.updatedAt = new Date()
     appState.emit('topic')
     return note
   }

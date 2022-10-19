@@ -7,6 +7,7 @@ export class Topic {
     this.title = data.title
     this.color = data.color
     this.notes = data.notes ? data.notes.map(n => new Note(n)) : []
+    this.createdAt = data.createdAt ? new Date(data.createdAt) : new Date()
   }
 
   get ListTemplate() {
@@ -22,7 +23,7 @@ export class Topic {
   get DetailsTemplate() {
     return `
     <div>
-      <h2 class="mb-3">
+      <h2 class="mb-1">
         <span>
           ${this.title}
         </span>
@@ -33,11 +34,14 @@ export class Topic {
           </button>
         </span>
       </h2>
+      <h3 class="mb-2">
+        ${this.createdAt.toLocaleDateString()}
+      </h3>
       <button class="btn btn-${this.color} mb-3" type="button" data-bs-toggle="collapse"
-        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        data-bs-target="#note-collapse" aria-expanded="false" aria-controls="collapseExample">
         <i class="mdi mdi-plus"></i>
       </button>
-      <div class="collapse" id="collapseExample">
+      <div class="collapse" id="note-collapse">
         <div class="card card-body">
           <form onsubmit="app.notesController.createNote()">
             <div class="row">

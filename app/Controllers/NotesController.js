@@ -11,9 +11,6 @@ export class NotesController {
     notesService.createNote(data)
     // @ts-ignore
     form.reset()
-    // @ts-ignore
-    const collapse = bootstrap.Collapse.getOrCreateInstance('#note-collapse')
-    collapse.toggle()
   }
 
   editNote(id) {
