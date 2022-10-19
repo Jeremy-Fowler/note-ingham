@@ -25,55 +25,81 @@
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
         <span class="ms-2">note-ingham</span>
+        <span>
+          <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
+            <i class="mdi mdi-sword"></i>
+
+          </button>
+
+        </span>
       </a>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-3 d-none d-lg-block">
-          <div class="row">
-            <div class="col-12 mt-2">
-              <h1 class="d-flex justify-content-between align-items-center">
+        <div class="col-3">
+          <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive"
+            aria-labelledby="offcanvasResponsiveLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title d-flex" id="offcanvasResponsiveLabel">
+
                 <i class="mdi mdi-sword"></i>
-                <span>scribl</span>
+                <span class="mx-3">scribl</span>
                 <button class="btn btn-outline-dark" data-bs-toggle="collapse" data-bs-target="#topic-collapse"
                   aria-expanded="false" aria-controls="topic-collapse">
                   <i class="mdi mdi-plus"></i>
                 </button>
-              </h1>
-              <div class="collapse mb-3" id="topic-collapse">
-                <form onsubmit="app.topicsController.createTopic()">
-                  <div class="card card-body">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input type="text" name="title" class="form-control" id="topic-title" minlength="2"
-                            maxlength="15" required>
-                          <label for="topic-title">Topic Title</label>
-                        </div>
-                      </div>
-                      <div class="col-8">
-                        <div class="form-floating">
-                          <select class="form-select" name="color" id="topic-color"
-                            aria-label="Floating label select example" required>
-                            <option value="success">🍏 Green</option>
-                            <option value="primary">🔵 Blue</option>
-                            <option value="info">🍇 Purple</option>
-                            <option value="warning">🍫 Brown</option>
-                          </select>
-                          <label for="topic-color">Color</label>
-                        </div>
-                      </div>
-                      <div class="col-4 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                aria-label="Close"></button>
             </div>
-            <div class="row" id="topics">
+            <div class="offcanvas-body">
+              <div class="row">
+                <div class="col-12 mt-2">
+                  <h1 class="d-none d-md-flex justify-content-between align-items-center">
+                    <i class="mdi mdi-sword"></i>
+                    <span>scribl</span>
+                    <button class="btn btn-outline-dark" data-bs-toggle="collapse" data-bs-target="#topic-collapse"
+                      aria-expanded="false" aria-controls="topic-collapse">
+                      <i class="mdi mdi-plus"></i>
+                    </button>
+                  </h1>
+                  <div class="collapse mb-3" id="topic-collapse">
+                    <form onsubmit="app.topicsController.createTopic()">
+                      <div class="card card-body">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input type="text" name="title" class="form-control" id="topic-title" minlength="2"
+                                maxlength="15" required>
+                              <label for="topic-title">Topic Title</label>
+                            </div>
+                          </div>
+                          <div class="col-8">
+                            <div class="form-floating">
+                              <select class="form-select" name="color" id="topic-color"
+                                aria-label="Floating label select example" required>
+                                <option value="success">🍏 Green</option>
+                                <option value="primary">🔵 Blue</option>
+                                <option value="info">🍇 Purple</option>
+                                <option value="warning">🍫 Brown</option>
+                              </select>
+                              <label for="topic-color">Color</label>
+                            </div>
+                          </div>
+                          <div class="col-4 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="row" id="topics">
+                </div>
+              </div>
             </div>
           </div>
         </div>
